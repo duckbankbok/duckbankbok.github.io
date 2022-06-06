@@ -3,17 +3,25 @@
 -
   type: github
   icon: 'fab fa-github'
+# -
+#   type: twitter
+#   icon: 'fab fa-twitter'
 -
-  type: twitter
-  icon: 'fab fa-twitter'
+  type: facebook
+  icon: 'fab fa-facebook'
+  url: 'https://www.facebook.com/profile.php?id=100010057967321'
+-
+  type: instagram
+  icon: 'fab fa-instagram'
+  url: 'https://www.instagram.com/bxx_yg/'
 -
   type: email
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab
--
-  type: rss
-  icon: 'fas fa-rss'
-  noblank: true
+# -
+#   type: rss
+#   icon: 'fas fa-rss'
+#   noblank: true
 
 # Uncomment and complete the url below to enable more contact options
 # -
