@@ -22,7 +22,7 @@ import itertools
 
 ## Problem definition
 
-There are randomly generated 15 nodes comprised with 5 depot nodes and 10 customer nodes. The numbers in the list represent x-coordinate, y-coordinate, demand, capacity and opening cost. Note that the depot nodes don't have any demand and also the customer nodes don't have any capacity and opening cost.
+There are randomly generated 15 nodes comprised with 5 depot nodes and 10 customer nodes. The numbers in the list represent x-coordinate, y-coordinate, demand, capacity and opening cost. Note that the depot nodes don't have any demand and also the customer nodes don't have any capacity and opening cost. The opening cost of all depot is 100. The fixed cost for a vehicle is 10. The traveling cost is Euclidean distance of route.
 
 ```python
 # [geo_x, geo_y, demand, capacity, opening cost]
@@ -108,21 +108,33 @@ depot_x = [node[0] for node in depot]
 depot_y = [node[1] for node in depot]
 customer_x = [node[0] for node in customer]
 customer_y = [node[1] for node in customer]
+depot_number = 0
+customer_number = 5
 
 plt.figure(figsize=(12,8))
 plt.scatter(depot_x, depot_y, c="red", marker="*", s=100, label="depot")
+for depot_node in depot:
+    plt.text(depot_node[0]-0.5, depot_node[1]+1, str(depot_number), fontsize=12)
+    depot_number += 1
 plt.scatter(customer_x, customer_y, c="green", marker="^", s=100, label="customer")
+for customer_node in customer:
+    if customer_number >= 10:
+        plt.text(customer_node[0]-1, customer_node[1]+1, str(customer_number), fontsize=12)
+        customer_number += 1
+    else:
+        plt.text(customer_node[0]-0.5, customer_node[1]+1, str(customer_number), fontsize=12)
+        customer_number += 1
 plt.legend()
 plt.show()
 ```
 
 
     
-![output_3_0](https://user-images.githubusercontent.com/64826387/172045605-0995ff3f-c06c-45b8-9a70-9d026b31358c.png)
+![output_3_0](https://user-images.githubusercontent.com/64826387/173565259-13daa69c-29d1-4d75-8f87-0f3775e75e35.png)
     
-
+## MIP
     
-## Mathematical formulation
+### Mathematical formulation
 
 Following mathematical formulation are referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
 
@@ -136,15 +148,19 @@ m = Model()
 >
 >$f_{ij}$ is a binary variable whether the customer node $j$ is assigned to the depot node $i$.
 >
->$O_i$ represents opening cost of the depot node $i$.
+>$v_k$ is a binary variable whether the vehicle $k$ is used.
 >
->$c_{ij}$ represents traveling cost (in this post, Euclidean distance) when traverse from the node $i$ to the node $j$.
+>$O_i$ is opening cost of the depot node $i$.
 >
->$d_j$ represents demand of the customer node $j$.
+>$c_{ij}$ is traveling cost (in this post, Euclidean distance) when traverse from the node $i$ to the node $j$.
 >
->$Q$ represents capacity of vehicle (in this post, 100).
+>$FC$ is fixed cost of vehicle (in this post, 10).
 >
->$W_i$ represents capacity of the depot node $i$.
+>$d_j$ is demand of the customer node $j$.
+>
+>$Q$ is capacity of vehicle (in this post, 100).
+>
+>$W_i$ is capacity of the depot node $i$.
 
 ```python
 # Variables
@@ -162,16 +178,22 @@ fij ={
     (i, j): m.add_var(var_type=BINARY, name="f_%s,%s" % (i, j))
     for i in I for j in J
 }
+
+vk ={
+    (k): m.add_var(var_type=BINARY, name="v_%s" % (k))
+    for k in K
+}
 ```
 
->min $z = \sum_{i \in I} O_i y_i + \sum_{i \in V} \sum_{j \in V} \sum_{k \in K} c_{ij} x_{ijk}$
+>min $z = \sum_{i \in I} O_i y_i + \sum_{i \in V} \sum_{j \in V} \sum_{k \in K} c_{ij} x_{ijk} + \sum_{k \in K} FC v_k$
 {: .prompt-info }
 
 ```python
 # Objective function
 m.objective = minimize(
     xsum(nodes[i][4]*yi[i] for i in I) +
-    xsum(distance[(i,j)]*xijk[i, j, k] for i in V for j in V for k in K)
+    xsum(distance[(i,j)]*xijk[i, j, k] for i in V for j in V for k in K) +
+    xsum(vk[k]*10 for k in K)
 )
 ```
 
@@ -194,6 +216,8 @@ m.objective = minimize(
 >$\sum_{i \in s} \sum_{j \in s} x_{ijk} \le$ Length of $s - 1 \quad \forall s \in S, \forall k \in K$
 >
 >$\sum_{u \in J} x_{iuk} + \sum_{u \in  V \backslash \lbrace j \rbrace } x_{ujk} \le 1 + f_{ij} \quad \forall i \in I, \forall j \in J, \forall k \in K$
+>
+>$Mv_k \ge \sum_{i \in V} \sum_{j \in V} x_{ijk} \quad \forall k \in K$
 {: .prompt-info }
 
 ```python
@@ -236,6 +260,10 @@ for i in I:
             U = list(V)
             U.remove(j)
             m += (xsum(xijk[i, u, k] for u in J) + xsum(xijk[u, j, k] for u in U) <= 1 + fij[i, j])
+
+# Constraint 10
+for k in K:
+    m += (vk[k] * 10000000 >= xsum(xijk[i, j, k] for i in V for j in V))
 ```
 
 ## Result
@@ -244,14 +272,6 @@ for i in I:
 m.write('model.lp')
 m.optimize()
 ```
-
-
-
-
-    <OptimizationStatus.OPTIMAL: 0>
-
-
-
 
 ```python
 solution = []
@@ -265,6 +285,9 @@ for i in I:
 for i in I:
     for j in J:
         solution.append([fij[i, j].name, fij[i, j].x])
+        
+for k in K:
+    solution.append([vk[k].name, vk[k].x])
 
 solution = pd.DataFrame(
     solution,
@@ -273,21 +296,12 @@ solution.to_csv('solution.csv', index=False)
 m.objective_value
 ```
 
-According to a model, the objective value, which means the total cost, is 338.15.
-
-
-    338.14956186283075
-
-
-
+According to a model, the objective value, which means the total cost, is 358.15.
 
 ```python
 solution = pd.read_csv('solution.csv')
 solution[solution['solution']>0]
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -313,63 +327,63 @@ solution[solution['solution']>0]
   </thead>
   <tbody>
     <tr>
-      <th>336</th>
-      <td>x_4,7,2</td>
+      <th>338</th>
+      <td>x_4,7,4</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>353</th>
-      <td>x_4,10,4</td>
+      <th>361</th>
+      <td>x_4,12,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>408</th>
-      <td>x_5,6,4</td>
+      <th>416</th>
+      <td>x_5,8,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>508</th>
-      <td>x_6,11,4</td>
+      <th>476</th>
+      <td>x_6,5,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>546</th>
-      <td>x_7,4,2</td>
+      <th>548</th>
+      <td>x_7,4,4</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>628</th>
-      <td>x_8,5,4</td>
+      <th>666</th>
+      <td>x_8,13,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>743</th>
-      <td>x_9,13,4</td>
+      <th>746</th>
+      <td>x_9,14,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>823</th>
-      <td>x_10,14,4</td>
+      <th>771</th>
+      <td>x_10,4,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>888</th>
-      <td>x_11,12,4</td>
+      <th>856</th>
+      <td>x_11,6,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>923</th>
-      <td>x_12,4,4</td>
+      <th>956</th>
+      <td>x_12,11,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>1018</th>
-      <td>x_13,8,4</td>
+      <th>1021</th>
+      <td>x_13,9,2</td>
       <td>1.0</td>
     </tr>
     <tr>
-      <th>1098</th>
-      <td>x_14,9,4</td>
+      <th>1101</th>
+      <td>x_14,10,2</td>
       <td>1.0</td>
     </tr>
     <tr>
@@ -427,13 +441,23 @@ solution[solution['solution']>0]
       <td>f_4,14</td>
       <td>1.0</td>
     </tr>
+    <tr>
+      <th>1181</th>
+      <td>v_2</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1183</th>
+      <td>v_4</td>
+      <td>1.0</td>
+    </tr>
   </tbody>
 </table>
 </div>
 <br>
 According to the result, the routes are as follows:
 
-![output_12_0](https://user-images.githubusercontent.com/64826387/172149138-dc449e58-fa9a-47ec-aa2d-168d071050e5.png)
+![output_12_0](https://user-images.githubusercontent.com/64826387/173565304-f75f8e99-b2d4-4aab-b85f-627f7398ff39.png)
 
 ## Reference
 - <p id="vincent_et_al">Vincent F. Yu, Shih-Wei Lin, Wenyih Lee, Ching-Jung Ting, A simulated annealing heuristic for the capacitated location routing problem, Computers & Industrial Engineering, Volume 58, Issue 2, 2010, Pages 288-299, ISSN 0360-8352, <a href="https://doi.org/10.1016/j.cie.2009.10.007" target="_blank">https://doi.org/10.1016/j.cie.2009.10.007</a>.</p>
