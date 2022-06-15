@@ -136,7 +136,7 @@ plt.show()
     
 ### Mathematical formulation
 
-Following mathematical formulation are referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
+Following mathematical formulation is referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
 
 ```python
 m = Model()
@@ -211,9 +211,9 @@ m.objective = minimize(
 >
 >$\sum_{i \in I} y_i \ge 1$
 >
->$\sum_{i \in I} \sum_{j \in J} f_{ij} =$ Length of $J$
+>$\sum_{i \in I} \sum_{j \in J} f_{ij} = \left\vert J \right\vert$
 >
->$\sum_{i \in s} \sum_{j \in s} x_{ijk} \le$ Length of $s - 1 \quad \forall s \in S, \forall k \in K$
+>$\sum_{i \in s} \sum_{j \in s} x_{ijk} \le \left\vert s \right\vert - 1 \quad \forall s \in S, \forall k \in K$
 >
 >$\sum_{u \in J} x_{iuk} + \sum_{u \in  V \backslash \lbrace j \rbrace } x_{ujk} \le 1 + f_{ij} \quad \forall i \in I, \forall j \in J, \forall k \in K$
 >
