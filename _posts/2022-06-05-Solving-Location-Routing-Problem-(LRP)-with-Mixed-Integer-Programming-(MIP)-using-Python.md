@@ -43,6 +43,8 @@ nodes = [[ 69.7234,  20.2083,   0.0000, 101.0000, 100.0000],
          [ 82.8111,  10.4402,  18.0000,   0.0000,   0.0000]]
 ```
 
+### Sets
+
 >$I$ represents list of the depot nodes.
 >
 >$J$ represents list of the customer nodes.
@@ -133,14 +135,14 @@ plt.show()
 ![output_3_0](https://user-images.githubusercontent.com/64826387/173565259-13daa69c-29d1-4d75-8f87-0f3775e75e35.png)
     
 ## MIP
-    
-### Mathematical formulation
 
 Following mathematical formulation is referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
 
 ```python
 m = Model()
 ```
+
+### Variables and Parameters
 
 >$x_{ijk}$ is a binary variable whether the node $i$ and the node $j$ are directly connected by vehicle $k$.
 >
@@ -184,6 +186,8 @@ vk ={
     for k in K
 }
 ```
+
+### Mathematical formulation
 
 >min $z = \sum_{i \in I} O_i y_i + \sum_{i \in V} \sum_{j \in V} \sum_{k \in K} c_{ij} x_{ijk} + \sum_{k \in K} FC v_k$
 {: .prompt-info }
