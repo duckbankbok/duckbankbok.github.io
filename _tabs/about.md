@@ -9,7 +9,7 @@ Master's student in UNIST, Department of industrial engineering
 
 ##### Research interests
 
-Big data, optimization, data mining
+Big data, Optimization, Data mining
 
 ##### Education
 

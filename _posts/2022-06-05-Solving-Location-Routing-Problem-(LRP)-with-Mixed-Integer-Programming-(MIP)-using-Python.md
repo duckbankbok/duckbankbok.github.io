@@ -300,7 +300,13 @@ solution.to_csv('solution.csv', index=False)
 m.objective_value
 ```
 
-According to a model, the objective value, which means the total cost, is 358.15.
+```
+
+    358.1495618628307
+
+```
+
+According to the model, the objective value, which means the total cost, is 358.15.
 
 ```python
 solution = pd.read_csv('solution.csv')
