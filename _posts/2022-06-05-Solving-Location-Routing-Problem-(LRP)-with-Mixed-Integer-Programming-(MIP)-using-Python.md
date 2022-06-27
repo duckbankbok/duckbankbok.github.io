@@ -299,11 +299,8 @@ solution = pd.DataFrame(
 solution.to_csv('solution.csv', index=False)
 m.objective_value
 ```
-
 ```
-
-    358.1495618628307
-
+358.1495618628307
 ```
 
 According to the model, the objective value, which means the total cost, is 358.15.
