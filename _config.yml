@@ -26,8 +26,7 @@ title: 뀨로그 (GGyulog)                          # the main title
 tagline: Younggyu's blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  UNIST 산업공학과 석사과정 학생입니다.
-  Master's student in UNIST, Department of Industrial engineering
+  대학원생 복영규의 블로그입니다.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://duckbankbok.github.io'
