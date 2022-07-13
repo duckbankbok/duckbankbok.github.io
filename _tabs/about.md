@@ -16,6 +16,34 @@ order: 4
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
+
+/* 리셋 CSS */
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+.slidebox {max-width:700px;margin:0 auto;position:relative;}
+.slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:top;background-color:#fff;width:100%;transition:all 1s;}
+.slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+.slidebox .slidelist .slideitem > a img {max-width:100%;}
+.slidebox .slidelist .textbox {position:relative;z-index:1;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+.slidebox .slidelist .textbox h3 {font-size:1rem;color:#000000;;transform:translateY(30px);transition:all .5s;}
+
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:60%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label.prev {left:20px;background:#333 url('../assets/img/button/left-arrow.png') center center / 70% no-repeat;}
+.slidebox .slide-control [class*="control"] label.next {right:20px;background:#333 url('../assets/img/button/right-arrow.png') center center / 50% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+
+/* input에 체크되면 텍스트 효과 */
+input[id="slide01"]:checked ~ .slidebox li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
 </style>
 
 <div class="container" style="text-align: center;">
@@ -37,3 +65,34 @@ Big data, Optimization, Data mining
 Bachelor of Science (Management Engineering)  
 `2022-Now, UNIST`
 Master's Student (Industrial Engineering)
+
+##### Project
+
+<div class="slidebox" style="justify-content: center;">
+	<input type="radio" name="slide" id="slide01" checked>
+	<input type="radio" name="slide" id="slide02">
+	<ul class="slidelist">
+		<li class="slideitem">
+			<h5 class="textbox" style="font-family: 'Merriweather'; margin: 1rem 0 0 0;">Dog classifier</h5>
+			<a href="https://duckbankbok.github.io/dog-classifier/">
+				<img src="../assets/img/projects/websites/dog_classifier.png">
+			</a>
+		</li>
+		<li class="slideitem">
+			<h5 class="textbox" style="font-family: 'Merriweather'; margin: 1rem 0 0 0;">Lottery</h5>
+			<a href="https://github.com/duckbankbok/lottery">
+				<img src="../assets/img/projects/websites/lottery.png">
+			</a>
+		</li>
+	</ul>
+	<div class="slide-control">
+		<div class="control01">
+			<label for="slide02" class="prev"></label>
+			<label for="slide02" class="next"></label>
+		</div>
+		<div class="control02">
+			<label for="slide01" class="prev"></label>
+			<label for="slide01" class="next"></label>
+		</div>
+	</div>
+</div>
