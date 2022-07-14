@@ -66,7 +66,7 @@ Bachelor of Science (Management Engineering)
 `2022-Now, UNIST`
 Master's Student (Industrial Engineering)
 
-##### Project
+##### Web Project
 
 <div class="slidebox" style="justify-content: center;">
 	<input type="radio" name="slide" id="slide01" checked>
