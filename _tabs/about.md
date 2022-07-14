@@ -30,7 +30,7 @@ ul, li {list-style:none;}
 .slidebox .slidelist .textbox h3 {font-size:1rem;color:#000000;;transform:translateY(30px);transition:all .5s;}
 
 .slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:60%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
-.slidebox .slide-control [class*="control"] label.prev {left:20px;background:#333 url('../assets/img/button/left-arrow.png') center center / 70% no-repeat;}
+.slidebox .slide-control [class*="control"] label.prev {left:20px;background:#333 url('../assets/img/button/left-arrow.png') center center / 50% no-repeat;}
 .slidebox .slide-control [class*="control"] label.next {right:20px;background:#333 url('../assets/img/button/right-arrow.png') center center / 50% no-repeat;}
 
 [name="slide"] {display:none;}
@@ -73,15 +73,15 @@ Master's Student (Industrial Engineering)
 	<input type="radio" name="slide" id="slide02">
 	<ul class="slidelist">
 		<li class="slideitem">
-			<h5 class="textbox" style="font-family: 'Merriweather'; margin: 1rem 0 0 0;">Dog classifier</h5>
+			<h6 class="textbox" style="font-family: 'Merriweather'; margin: 0.5rem 0 0 0;">Dog classifier</h6>
 			<a href="https://duckbankbok.github.io/dog-classifier/">
-				<img src="../assets/img/projects/websites/dog_classifier.png">
+				<img src="../assets/img/projects/websites/dog_classifier.png" style="margin: 0;">
 			</a>
 		</li>
 		<li class="slideitem">
-			<h5 class="textbox" style="font-family: 'Merriweather'; margin: 1rem 0 0 0;">Lottery</h5>
+			<h6 class="textbox" style="font-family: 'Merriweather'; margin: 0.5rem 0 0 0;">Lottery</h6>
 			<a href="https://github.com/duckbankbok/lottery">
-				<img src="../assets/img/projects/websites/lottery.png">
+				<img src="../assets/img/projects/websites/lottery.png" style="margin: 0;">
 			</a>
 		</li>
 	</ul>
