@@ -29,7 +29,7 @@ ul, li {list-style:none;}
 .slidebox .slidelist .textbox {position:relative;z-index:1;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
 .slidebox .slidelist .textbox h3 {font-size:1rem;color:#000000;;transform:translateY(30px);transition:all .5s;}
 
-.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:60%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+.slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:55%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
 .slidebox .slide-control [class*="control"] label.prev {left:20px;background:#333 url('../assets/img/button/left-arrow.png') center center / 50% no-repeat;}
 .slidebox .slide-control [class*="control"] label.next {right:20px;background:#333 url('../assets/img/button/right-arrow.png') center center / 50% no-repeat;}
 
