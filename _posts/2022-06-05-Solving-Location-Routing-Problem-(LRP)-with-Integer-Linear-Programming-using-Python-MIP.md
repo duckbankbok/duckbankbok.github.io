@@ -1,5 +1,5 @@
 ---
-title: Solving Location Routing Problem (LRP) with Mixed Integer Programming (MIP) using Python
+title: Solving Location Routing Problem (LRP) with Integer Linear Programming using Python MIP
 date: 2022-06-06 17:00:00 +0900
 categories: [OR, LRP]
 tags: [or, lrp, mip]     # TAG names should always be lowercase
@@ -10,7 +10,7 @@ math: true
 
 ## LRP
 
-Location Routing Problem (LRP) is a combination problem of Location Allocation Problem and Vehicle Routing Problem. The goal of the LRP is determining the location of depots and the routes of the vehicles for serving the customers which minimize the total cost. This post solves the LRP with Mixed Integer Programming using Python.
+Location Routing Problem (LRP) is a combination problem of Location Allocation Problem and Vehicle Routing Problem. The goal of the LRP is determining the location of depots and the routes of the vehicles for serving the customers which minimize the total cost. This post solves the LRP with Integer Linear Programming using Python.
 
 ```python
 from mip import Model, xsum, minimize, BINARY
@@ -43,7 +43,7 @@ nodes = [[ 69.7234,  20.2083,   0.0000, 101.0000, 100.0000],
          [ 82.8111,  10.4402,  18.0000,   0.0000,   0.0000]]
 ```
 
-### Sets
+### Set
 
 >$I$ represents list of the depot nodes.
 >
@@ -134,7 +134,7 @@ plt.show()
     
 ![output_3_0](https://user-images.githubusercontent.com/64826387/173565259-13daa69c-29d1-4d75-8f87-0f3775e75e35.png)
     
-## MIP
+## Integer Linear Programming
 
 Following mathematical formulation is referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
 
@@ -144,6 +144,8 @@ m = Model()
 
 ### Variables and Parameters
 
+#### Decision variable
+
 >$x_{ijk}$ is a binary variable whether the node $i$ and the node $j$ are directly connected by vehicle $k$.
 >
 >$y_i$ is a binary variable whether the depot node $i$ opens.
@@ -152,6 +154,9 @@ m = Model()
 >
 >$v_k$ is a binary variable whether the vehicle $k$ is used.
 >
+
+#### Parameter
+
 >$O_i$ is opening cost of the depot node $i$.
 >
 >$c_{ij}$ is traveling cost (in this post, Euclidean distance) when traverse from the node $i$ to the node $j$.
@@ -303,7 +308,7 @@ m.objective_value
 358.1495618628307
 ```
 
-According to the model, the objective value, which means the total cost, is 358.15.
+According to the model, the objective value (the total cost) is 358.15.
 
 ```python
 solution = pd.read_csv('solution.csv')
@@ -462,7 +467,7 @@ solution[solution['solution']>0]
 </table>
 </div>
 <br>
-According to the result, the routes are as follows:
+According to the result, the routes are as follow:
 
 ![output_12_0](https://user-images.githubusercontent.com/64826387/173565304-f75f8e99-b2d4-4aab-b85f-627f7398ff39.png)
 
