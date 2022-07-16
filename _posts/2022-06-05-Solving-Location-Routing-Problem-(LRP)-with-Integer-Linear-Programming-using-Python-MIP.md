@@ -129,12 +129,8 @@ for customer_node in customer:
 plt.legend()
 plt.show()
 ```
-
-
     
 ![output_3_0](https://user-images.githubusercontent.com/64826387/173565259-13daa69c-29d1-4d75-8f87-0f3775e75e35.png)
-    
-## Integer Linear Programming
 
 Following mathematical formulation is referred to <a href="#vincent_et_al">Vincent et al. (2010)</a>.
 
@@ -191,6 +187,8 @@ vk ={
     for k in K
 }
 ```
+
+## Integer Linear Programming
 
 ### Mathematical formulation
 
