@@ -16,6 +16,16 @@ order: 4
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
+.zoom-container {
+	background: rgb(0,27,84);
+	-webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.zoom-container:hover {
+	background: rgb(68,193,196);
+	-webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
 
 /* 리셋 CSS */
 * {margin:0;padding:0;box-sizing:border-box;}
@@ -47,8 +57,11 @@ input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h3 {opacity:1;t
 </style>
 
 <div class="container" style="text-align: center;">
-    <div class="zoom" style="display: inline-block; position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%;">
-        <a href="https://github.com/duckbankbok" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: auto; height: 100%; margin-top: auto;" /></a></div>
+	<div class="zoom-container" style="display: inline-block; position: relative; width: 206px; height: 206px; border-radius: 50%;">
+		<div class="zoom" style="display: inline-block; position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin-top: 3px;">
+			<a href="https://github.com/duckbankbok" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: auto; height: 100%; margin-top: auto; margin-bottom: 0;" /></a>
+		</div>
+	</div>
     <div class="divider"></div>
     <div style="display: inline-block; background-color: rgb(68,193,196); height: 1px; width: 160px;"></div>
     <h5 style="margin-top: 0; margin-bottom: 0.5rem; font-family: 'Merriweather', 'Nanum Gothic', serif;" >복영규 (Younggyu Bok)</h5>
