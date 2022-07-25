@@ -33,11 +33,11 @@ ul, li {list-style:none;}
 
 .slidebox {max-width:700px;margin:0 auto;position:relative;}
 .slidebox .slidelist {position:relative;white-space:nowrap;font-size:0;overflow:hidden;}
-.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:top;background-color:#fff;width:100%;transition:all 1s;}
+.slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:top;width:100%;transition:all 1s;}
 .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
 .slidebox .slidelist .slideitem > a img {max-width:100%;}
 .slidebox .slidelist .textbox {position:relative;z-index:1;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
-.slidebox .slidelist .textbox h3 {font-size:1rem;color:#000000;;transform:translateY(30px);transition:all .5s;}
+.slidebox .slidelist .textbox h6 {font-size:1rem;color:#000000;transform:translateY(30px);transition:all .5s;}
 
 .slidebox .slide-control [class*="control"] label {position:absolute;z-index:10;top:55%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
 .slidebox .slide-control [class*="control"] label.prev {left:20px;background:#333 url('../assets/img/button/left-arrow.png') center center / 50% no-repeat;}
@@ -48,8 +48,8 @@ ul, li {list-style:none;}
 #slide02:checked ~ .slidelist .slideitem {left:-100%;}
 
 /* input에 체크되면 텍스트 효과 */
-input[id="slide01"]:checked ~ .slidebox li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
-input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+input[id="slide01"]:checked ~ .slidebox li:nth-child(1) .textbox h6 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h6 {opacity:1;transform:translateY(0);transition-delay:.2s;}
 
 .slide-control [class*="control"] {display:none;}
 #slide01:checked ~ .slide-control .control01 {display:block;}
