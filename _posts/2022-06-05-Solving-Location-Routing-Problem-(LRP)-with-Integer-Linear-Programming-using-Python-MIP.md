@@ -4,7 +4,7 @@ date: 2022-06-06 17:00:00 +0900
 categories: [OR, LRP]
 tags: [or, lrp, mip]     # TAG names should always be lowercase
 math: true
-image: https://user-images.githubusercontent.com/64826387/172050237-c0986136-7bd9-40d0-bd63-f714a5fae578.png
+image: https://user-images.githubusercontent.com/64826387/173565304-f75f8e99-b2d4-4aab-b85f-627f7398ff39.png
 ---
 
 ![lrp](https://user-images.githubusercontent.com/64826387/172050237-c0986136-7bd9-40d0-bd63-f714a5fae578.png)
