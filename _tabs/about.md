@@ -1,6 +1,7 @@
 ---
 title: About
 icon: fas fa-info-circle
+image: assets/img/icon.jpg
 order: 4
 ---
 <style>
