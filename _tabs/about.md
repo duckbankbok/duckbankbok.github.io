@@ -80,6 +80,10 @@ Bachelor of Science (Management Engineering)
 `2022-Now, UNIST`
 Master's Student (Industrial Engineering)
 
+##### Contact
+
+`Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
+
 ##### Web Project
 
 <div class="slidebox" style="justify-content: center;">
