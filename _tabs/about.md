@@ -60,7 +60,7 @@ input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h6 {opacity:1;t
 <div class="container" style="text-align: center;">
 	<div class="zoom-container" style="display: inline-block; position: relative; width: 206px; height: 206px; border-radius: 50%;">
 		<div class="zoom" style="display: inline-block; position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin-top: 3px;">
-			<a href="https://github.com/duckbankbok" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: auto; height: 100%; margin-top: auto; margin-bottom: 0;" /></a>
+			<a href="https://duckbankbok.com" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: auto; height: 100%; margin-top: auto; margin-bottom: 0;" /></a>
 		</div>
 	</div>
     <div class="divider"></div>
@@ -84,7 +84,9 @@ Master's Student (Industrial Engineering)
 
 `Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
 
-##### Web Project
+##### [My Page](https://duckbankbok.com)
+
+<!-- ##### Web Project
 
 <div class="slidebox" style="justify-content: center;">
 	<input type="radio" name="slide" id="slide01" checked>
@@ -113,4 +115,4 @@ Master's Student (Industrial Engineering)
 			<label for="slide01" class="next"></label>
 		</div>
 	</div>
-</div>
+</div> -->
