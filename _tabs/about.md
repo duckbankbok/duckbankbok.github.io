@@ -29,7 +29,7 @@ order: 4
 }
 
 /* 리셋 CSS */
-* {margin:0;padding:0;box-sizing:border-box;}
+/* * {margin:0;padding:0;box-sizing:border-box;}
 ul, li {list-style:none;}
 
 .slidebox {max-width:700px;margin:0 auto;position:relative;}
@@ -46,21 +46,21 @@ ul, li {list-style:none;}
 
 [name="slide"] {display:none;}
 #slide01:checked ~ .slidelist .slideitem {left:0;}
-#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;} */
 
 /* input에 체크되면 텍스트 효과 */
-input[id="slide01"]:checked ~ .slidebox li:nth-child(1) .textbox h6 {opacity:1;transform:translateY(0);transition-delay:.2s;}
+/* input[id="slide01"]:checked ~ .slidebox li:nth-child(1) .textbox h6 {opacity:1;transform:translateY(0);transition-delay:.2s;}
 input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h6 {opacity:1;transform:translateY(0);transition-delay:.2s;}
 
 .slide-control [class*="control"] {display:none;}
 #slide01:checked ~ .slide-control .control01 {display:block;}
-#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;} */
 </style>
 
 <div class="container" style="text-align: center;">
 	<div class="zoom-container" style="display: inline-block; position: relative; width: 206px; height: 206px; border-radius: 50%;">
 		<div class="zoom" style="display: inline-block; position: relative; width: 200px; height: 200px; overflow: hidden; border-radius: 50%; margin-top: 3px;">
-			<a href="https://duckbankbok.com" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: auto; height: 100%; margin-top: auto; margin-bottom: 0;" /></a>
+			<a href="https://duckbankbok.com" target="_blank"><img src="../assets/img/profile.jpg" style="display: block; width: 100%; height: 100%; border-radius: 50%; margin-top: auto; margin-bottom: 0;" /></a>
 		</div>
 	</div>
     <div class="divider"></div>
@@ -84,7 +84,7 @@ Master's Student (Industrial Engineering)
 
 `Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
 
-##### [My Page](https://duckbankbok.com)
+##### Visit [My Page](https://duckbankbok.com)
 
 <!-- ##### Web Project
 
