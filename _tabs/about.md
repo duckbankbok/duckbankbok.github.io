@@ -66,7 +66,7 @@ input[id="slide02"]:checked ~ .slidebox li:nth-child(2) .textbox h6 {opacity:1;t
     <div class="divider"></div>
     <div style="display: inline-block; background-color: rgb(68,193,196); height: 1px; width: 160px;"></div>
     <h5 style="margin-top: 0; margin-bottom: 0.5rem; font-family: 'Merriweather', 'Nanum Gothic', serif;" >복영규 (Younggyu Bok)</h5>
-    <h6 style="mmargin: 0;">Master's student in UNIST (Department of Industrial Engineering)</h6>
+    <h6 style="margin: 0;">Master's student in UNIST (Department of Industrial Engineering)</h6>
 </div>
 
 ##### Research interests
