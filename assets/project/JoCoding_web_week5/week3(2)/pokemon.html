@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,12 @@
         #container {
             width: 200px;
             text-align: center;
+            margin: 0 auto;
+        }
+
+        #look {
+            width: 96px;
+            height: 96px;
             margin: 0 auto;
         }
         
@@ -37,7 +43,7 @@
     <button onclick="squirtle();">꼬부기</button>
 
     <div id="container">
-        <img id="look" src="" alt="">
+        <div id="look"></div>
         <p id="pokemon"></p>
         <p id="sh1"></p>
         <ul id="type"></ul>
@@ -57,7 +63,7 @@
             fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
                 .then((response) => response.json())
                 .then((data) => {
-                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("look").style.backgroundImage = "url('" + data['sprites']['front_default'] + "')";
                     document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
                     data['types'].forEach(function(type) {
                         let li = document.createElement("li");
@@ -83,7 +89,7 @@
             fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur')
                 .then((response) => response.json())
                 .then((data) => {
-                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("look").style.backgroundImage = "url('" + data['sprites']['front_default'] + "')";
                     document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
                     data['types'].forEach(function(type) {
                         let li = document.createElement("li");
@@ -109,7 +115,7 @@
             fetch('https://pokeapi.co/api/v2/pokemon/charmander')
                 .then((response) => response.json())
                 .then((data) => {
-                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("look").style.backgroundImage = "url('" + data['sprites']['front_default'] + "')";
                     document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
                     data['types'].forEach(function(type) {
                         let li = document.createElement("li");
@@ -135,7 +141,7 @@
             fetch('https://pokeapi.co/api/v2/pokemon/squirtle')
                 .then((response) => response.json())
                 .then((data) => {
-                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("look").style.backgroundImage = "url('" + data['sprites']['front_default'] + "')";
                     document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
                     data['types'].forEach(function(type) {
                         let li = document.createElement("li");
