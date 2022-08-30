@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container {
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        #pokemon {
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        #sh1, #sh2 {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+        
+        #type, #ability {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+    </style>
+    <title>포켓몬 API</title>
+</head>
+<body>
+    <button onclick="pikachu();">피카츄</button>
+    <button onclick="bulbasaur();">이상해씨</button>
+    <button onclick="charmander();">파이리</button>
+    <button onclick="squirtle();">꼬부기</button>
+
+    <div id="container">
+        <img id="look" src="">
+        <p id="pokemon"></p>
+        <p id="sh1"></p>
+        <ul id="type"></ul>
+        <p id="sh2"></p>
+        <ul id="ability"></ul>
+    </div>
+
+    <script>
+        function pikachu() {
+            var ul_type = document.getElementById("type");
+            var ul_ability = document.getElementById("ability");
+            ul_type.innerHTML = "";
+            ul_ability.innerHTML = "";
+            document.getElementById("sh1").innerHTML = "Type";
+            document.getElementById("sh2").innerHTML = "Ability";
+        
+            fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
+                    data['types'].forEach(function(type) {
+                        let li = document.createElement("li");
+                        li.innerText = type["type"]["name"];
+                        ul_type.appendChild(li);
+                    })
+                    data['abilities'].forEach(function(ability) {
+                        let li = document.createElement("li");
+                        li.innerText = ability["ability"]["name"];
+                        ul_ability.appendChild(li);
+                    })
+                });
+        }
+        
+        function bulbasaur() {
+            var ul_type = document.getElementById("type");
+            var ul_ability = document.getElementById("ability");
+            ul_type.innerHTML = "";
+            ul_ability.innerHTML = "";
+            document.getElementById("sh1").innerHTML = "Type";
+            document.getElementById("sh2").innerHTML = "Ability";
+        
+            fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur')
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
+                    data['types'].forEach(function(type) {
+                        let li = document.createElement("li");
+                        li.innerText = type["type"]["name"];
+                        ul_type.appendChild(li);
+                    })
+                    data['abilities'].forEach(function(ability) {
+                        let li = document.createElement("li");
+                        li.innerText = ability["ability"]["name"];
+                        ul_ability.appendChild(li);
+                    })
+                });
+        }
+        
+        function charmander() {
+            var ul_type = document.getElementById("type");
+            var ul_ability = document.getElementById("ability");
+            ul_type.innerHTML = "";
+            ul_ability.innerHTML = "";
+            document.getElementById("sh1").innerHTML = "Type";
+            document.getElementById("sh2").innerHTML = "Ability";
+        
+            fetch('https://pokeapi.co/api/v2/pokemon/charmander')
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
+                    data['types'].forEach(function(type) {
+                        let li = document.createElement("li");
+                        li.innerText = type["type"]["name"];
+                        ul_type.appendChild(li);
+                    })
+                    data['abilities'].forEach(function(ability) {
+                        let li = document.createElement("li");
+                        li.innerText = ability["ability"]["name"];
+                        ul_ability.appendChild(li);
+                    })
+                });
+        }
+        
+        function squirtle() {
+            var ul_type = document.getElementById("type");
+            var ul_ability = document.getElementById("ability");
+            ul_type.innerHTML = "";
+            ul_ability.innerHTML = "";
+            document.getElementById("sh1").innerHTML = "Type";
+            document.getElementById("sh2").innerHTML = "Ability";
+        
+            fetch('https://pokeapi.co/api/v2/pokemon/squirtle')
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("look").src = data['sprites']['front_default'];
+                    document.getElementById("pokemon").innerHTML = data['forms'][0]['name'].charAt(0).toUpperCase() + data['forms'][0]['name'].slice(1);
+                    data['types'].forEach(function(type) {
+                        let li = document.createElement("li");
+                        li.innerText = type["type"]["name"];
+                        ul_type.appendChild(li);
+                    })
+                    data['abilities'].forEach(function(ability) {
+                        let li = document.createElement("li");
+                        li.innerText = ability["ability"]["name"];
+                        ul_ability.appendChild(li);
+                    })
+                });
+        }
+        </script>
+</body>
+</html>
