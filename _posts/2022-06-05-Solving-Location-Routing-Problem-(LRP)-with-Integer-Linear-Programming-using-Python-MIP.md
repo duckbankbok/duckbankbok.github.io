@@ -2,7 +2,7 @@
 title: Solving Location Routing Problem (LRP) with Integer Linear Programming using Python MIP
 date: 2022-06-06 17:00:00 +0900
 categories: [OR, LRP]
-tags: [or, lrp, mip]     # TAG names should always be lowercase
+tags: [or, lrp, lp, mip, python]     # TAG names should always be lowercase
 math: true
 image: https://user-images.githubusercontent.com/64826387/173565304-f75f8e99-b2d4-4aab-b85f-627f7398ff39.png
 ---
@@ -287,6 +287,7 @@ for i in V:
     for j in V:
         for k in K:
             solution.append([xijk[i, j, k].name, xijk[i, j, k].x])
+
 for i in I:
     solution.append([yi[i].name, yi[i].x])
 
