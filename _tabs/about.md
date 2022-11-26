@@ -45,19 +45,20 @@ img:hover {
     <h6 style="margin: 0;">Master's student in UNIST (Department of Industrial Engineering)</h6>
 </div>
 
+##### Personal Info
+
+`Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
+
 ##### Research interests
 
-Big data, Optimization, Data mining
+Optimization, Big data
 
 ##### Education
 
-`2016-2022, UNIST`
-Bachelor of Science (Management Engineering)  
 `2022-Now, UNIST`
-Master's Student (Industrial Engineering)
+Master's Student in Industrial Engineering (Advisor: [Prof. Sang Jin Kweon](https://scholar.google.co.kr/citations?user=R9V5FPgAAAAJ&hl=ko&oi=ao))
 
-##### Contact
-
-`Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
+`2016-2022, UNIST`
+Bachelor of Science in Management Engineering
 
 ##### Visit [My Page](https://duckbankbok.com)
