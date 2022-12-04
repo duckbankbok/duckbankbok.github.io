@@ -59,6 +59,6 @@ Optimization, Big data
 Master's Student in Industrial Engineering (Advisor: [Prof. Sang Jin Kweon](https://scholar.google.co.kr/citations?user=R9V5FPgAAAAJ&hl=ko&oi=ao))
 
 `2016-2022, UNIST`
-Bachelor of Science in Management Engineering
+B.S. in Management Engineering
 
 ##### Visit [My Page](https://duckbankbok.com)
