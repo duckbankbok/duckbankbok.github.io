@@ -6,10 +6,10 @@
 # -
 #   type: twitter
 #   icon: 'fab fa-twitter'
--
-  type: facebook
-  icon: 'fab fa-facebook'
-  url: 'https://www.facebook.com/profile.php?id=100010057967321'
+# -
+#   type: facebook
+#   icon: 'fab fa-facebook'
+#   url: 'https://www.facebook.com/profile.php?id=100010057967321'
 -
   type: instagram
   icon: 'fab fa-instagram'
