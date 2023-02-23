@@ -22,7 +22,3 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 ins.adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
 }
-
-ins.adsbygoogle {
-  padding: 0.25rem !important;
-}
