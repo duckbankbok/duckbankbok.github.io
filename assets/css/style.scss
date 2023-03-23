@@ -11,9 +11,9 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
 /* append your custom style below */
 
-.row {
-  flex-wrap: nowrap;
-}
+// .row {
+//   flex-wrap: nowrap;
+// }
 
 // #panel-wrapper {
 //   background-color: var(--main-bg);
