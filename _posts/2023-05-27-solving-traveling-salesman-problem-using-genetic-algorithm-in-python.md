@@ -18,13 +18,13 @@ In this blog post, we will explore how to implement TSP using GA in Python. We w
 
 GA needs solution representation specially designed to the problem. We will use permutation representation comprised with a set of distinct nodes. To illustrate this, let's consider a TSP instance with five cities: A, B, C, D, and E. A possible permutation representation for this problem could be [A, C, E, B, D]. This permutation indicates that the salesman should visit city A first, then move to city C, followed by city E, B, and finally D, before returning to the starting city. We will solve TSP with 20 nodes, so the sample solution is as follows:
 
-![solution representation](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/ade44bdd-b7a7-457d-931e-51d64ecf66dc)
+![solution representation](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/023d878d-f331-48b0-b6ba-3681dd8966f4)
 
 ### Algorithm Flow Chart
 
 GA model for the problem is structured with the following flow chart.
 
-![ga flow chart](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/d214ab06-d0c8-401b-9d87-fca24bd50025){: width="50%"}
+![ga flow chart](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/0f6ae21e-6999-44b1-83cf-8428b7089b34){: width="50%"}
 
 #### Initialization
 
@@ -48,13 +48,13 @@ Binary Tournament Selection is the process randomly selecting two individuals fr
 
 - **One Point Crossover**
 
-![one point crossover](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/89cefec8-1967-4b35-8b4d-529f9dbd77b1)
+![one point crossover](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/053744fe-d82a-4243-a5ca-651d7863c4aa)
 
 In One Point Crossover, two parents are selected from the population. A random crossover point, typically a specific index position, is chosen along the solution sequence of the first parent. In general, the genetic material beyond this crossover point is exchanged between the parents. But in this problem, every node should appear only once in permutation. Therefore, the remaining part of the permutation is filled based on the permutation of the second parent.
 
 - **Swap Mutation**
 
-![swap mutation](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/7fe6cb6d-b095-4e31-a4ca-e4a412da2cb3)
+![swap mutation](https://github.com/duckbankbok/duckbankbok.github.io/assets/64826387/daa2e133-edbf-426a-9fe7-fc7249ca6069)
 
 In Swap Mutation, two randomly selected nodes are swapped.
 
