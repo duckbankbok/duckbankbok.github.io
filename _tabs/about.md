@@ -51,7 +51,7 @@ img:hover {
 
 ##### Research interests
 
-Optimization, Big data
+Optimization, Big Data, Operations Research
 
 ##### Education
 
@@ -60,5 +60,9 @@ Master's Student in Industrial Engineering (Advisor: [Prof. Sang Jin Kweon](http
 
 `2016-2022, UNIST`
 B.S. in Management Engineering
+
+##### Publication
+
+- **Younggyu Bok**, Na Kyung Lee, Sugyeong Jo, Seokgi Lee, <U>Sang Jin Kweon</U>, and Hyeong Suk Na (In press). The production scheduling problem employing non-identical parallel machines with due dates considering carbon emissions and multiple types of energy sources. *Expert Systems with Applications*. [<a href="https://doi.org/10.1016/j.eswa.2023.121990" target="_blank">Link</a>]
 
 ##### Visit [My Page](https://duckbankbok.com)
