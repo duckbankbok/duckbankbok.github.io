@@ -42,27 +42,14 @@ img:hover {
 	</div>
     <div style="display: inline-block; background-color: rgb(68,193,196); height: 1px; width: 160px;"></div>
     <h5 style="margin-top: 0; margin-bottom: 0.5rem; font-family: 'Merriweather', 'Nanum Gothic', serif;" >복영규 (Younggyu Bok)</h5>
-    <h6 style="margin: 0;">Master's student in UNIST (Department of Industrial Engineering)</h6>
 </div>
-
-##### Personal Info
-
-`Email` <a href="mailto:yg.bok@unist.ac.kr">yg.bok@unist.ac.kr</a>
-
-##### Research interests
-
-Optimization, Big Data, Operations Research
 
 ##### Education
 
-`2022-Now, UNIST`
-Master's Student in Industrial Engineering (Advisor: [Prof. Sang Jin Kweon](https://scholar.google.co.kr/citations?user=R9V5FPgAAAAJ&hl=ko&oi=ao))
+`Mar 2022-Feb 2024`
+M.S. in Industrial Engineering, UNIST (Advisor: [Prof. Sang Jin Kweon](https://scholar.google.co.kr/citations?user=R9V5FPgAAAAJ&hl=ko&oi=ao))
 
-`2016-2022, UNIST`
-B.S. in Management Engineering
-
-##### Publication
-
-- **Younggyu Bok**, Na Kyung Lee, Sugyeong Jo, Seokgi Lee, <U>Sang Jin Kweon</U>, and Hyeong Suk Na (In press). The production scheduling problem employing non-identical parallel machines with due dates considering carbon emissions and multiple types of energy sources. *Expert Systems with Applications*. [<a href="https://doi.org/10.1016/j.eswa.2023.121990" target="_blank">Link</a>]
+`Mar 2016-Feb 2022`
+B.S. in Management Engineering, UNIST
 
 ##### Visit [My Page](https://duckbankbok.com)
