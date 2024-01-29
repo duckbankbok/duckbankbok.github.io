@@ -26,7 +26,7 @@ title: 뀨로그 (GGyulog)                          # the main title
 tagline: Younggyu's blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  대학원생 복영규의 블로그입니다.
+  복영규의 블로그
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://duckbankbok.github.io'
