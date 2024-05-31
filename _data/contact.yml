@@ -13,11 +13,11 @@
 -
   type: instagram
   icon: 'fab fa-instagram'
-  url: 'https://www.instagram.com/bxx_yg/'
--
-  type: email
-  icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
+  url: 'https://www.instagram.com/yg_bok/'
+# -
+#   type: email
+#   icon: 'fas fa-envelope's
+#   noblank: true            # open link in current tab
 # -
 #   type: rss
 #   icon: 'fas fa-rss'
