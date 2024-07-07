@@ -38,7 +38,7 @@ img:hover {
 
 <div class="container" style="text-align: center;">
 	<div id="zoom">
-		<a href="https://scholar.google.com/citations?hl=ko&user=F-YA2HIAAAAJ" target="_blank"><img src="../assets/img/profile.jpg" /></a>
+		<a href="https://duckbankbok.com" target="_blank"><img src="../assets/img/profile.jpg" /></a>
 	</div>
     <div style="display: inline-block; background-color: rgb(68,193,196); height: 1px; width: 160px;"></div>
     <h5 style="margin-top: 0; margin-bottom: 0.5rem; font-family: 'Merriweather', 'Nanum Gothic', serif;" >복영규 (Younggyu Bok)</h5>
@@ -51,5 +51,3 @@ M.S. in Industrial Engineering, UNIST (Advisor: [Prof. Sang Jin Kweon](https://s
 
 `Mar 2016-Feb 2022`
 B.S. in Management Engineering, UNIST
-
-##### Visit [My Page](https://duckbankbok.com)
