@@ -3,6 +3,14 @@
 -
   type: github
   icon: 'fab fa-github'
+-
+  type: instagram
+  icon: 'fab fa-instagram'
+  url: 'https://www.instagram.com/yg_bok/'
+-
+  type: linkedin
+  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.linkedin.com/in/%EB%B3%B5%EC%98%81%EA%B7%9C/'                  # Fill with your Linkedin homepage
 # -
 #   type: twitter
 #   icon: 'fab fa-twitter'
@@ -10,10 +18,6 @@
 #   type: facebook
 #   icon: 'fab fa-facebook'
 #   url: 'https://www.facebook.com/profile.php?id=100010057967321'
--
-  type: instagram
-  icon: 'fab fa-instagram'
-  url: 'https://www.instagram.com/yg_bok/'
 # -
 #   type: email
 #   icon: 'fas fa-envelope's
@@ -28,10 +32,6 @@
 #   type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your mastodon account page
-# -
-#   type: linkedin
-#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
