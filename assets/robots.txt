@@ -1,0 +1,9 @@
+User-agent: *
+
+Allow: /
+
+User-agent: *
+
+Disallow: /assets/
+
+Sitemap: http://duckbankbok.github.io/sitemap.xml
